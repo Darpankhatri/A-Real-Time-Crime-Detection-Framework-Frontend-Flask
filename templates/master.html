@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> {% block title %} {% endblock %} </title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="css/bootstrap.css" rel="stylesheet" type="text/css"> -->
+    <!-- <link href="css/bootstrap.css.map" rel="stylesheet" type="text/css"> -->
+    <!-- <link href="css/custom.css" rel="stylesheet" type="text/css"> -->
+    <!-- <link rel="icon" href="images/fav-icon.png" type="image/png" sizes=""> -->
+
+    <link href="{{ url_for('static',filename="css/bootstrap.css") }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static',filename="css/bootstrap.css.map") }}" rel="stylesheet" type="text/css">
+    <link rel="icon" href="{{ url_for('static',filename="images/fav-icon.png") }}" type="image/png" sizes="">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
+    <link rel="stylesheet" href="https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/css/demo.css">
+    <link href="{{ url_for('static',filename="css/custom.css") }}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!--header start-->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">SVS.</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{{url_for("index")}}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for("about")}}">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Our Work</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Predict</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Predict Live</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--header close-->
+    <!--main start-->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <!--main close-->
+    
+    <!-- <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script> -->
+
+
+    <script src="{{ url_for('static',filename="js/jquery-3.6.0.min.js") }}"></script>
+    <script src="{{ url_for('static',filename="js/bootstrap.min.js") }}"></script>
+    <script src="https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/EasePack.min.js"></script>
+    <script src="https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/rAF.js"></script>
+    <script src="https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/TweenLite.min.js"></script>
+    <script src="{{ url_for('static',filename="js/custom.js") }}"></script>
+
+    {% block scripts %}
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+{% extends "master.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<section class="sec-home-banner" id="large-header">
+    <canvas id="demo-canvas"></canvas>
+    <div class="content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+
+                    <div class="main-desc">
+                        <h2 id="demo"></h2><h2 id="demo-show">|</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        var i = 0;
+        var txt = 'CCTV Crime Dectection & Video Segmentation';
+        var speed = 50;
+        $(document).ready(function(){
+            function typeWriter() {
+                if (i < txt.length) {
+                    document.getElementById("demo").innerHTML += txt.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                }
+                else{
+                    i=0;
+                    typehide();
+                }
+            }
+            typeWriter();
+
+            var x=0;
+            function typehide() {
+                if(x==0){
+                    $('#demo-show').hide();
+                    x=1;
+                }
+                else{
+                    $('#demo-show').show();
+                    x=0;
+                }
+                i+=1;
+                if(i>=5)
+                    document.getElementById("demo").innerHTML += '.';
+                else
+                    setTimeout(typehide, 500);
+                
+            }
+            
+        });
+    </script>
+{% endblock %}

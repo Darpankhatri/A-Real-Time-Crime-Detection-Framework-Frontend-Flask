@@ -195,6 +195,18 @@ button:focus {
     background: #000;
 }
 
+.sec-home-banner .my-an:hover {
+    background-color: #000;
+    transition: 0.5s;
+}
+.sec-home-banner .my-an:hover h2 {
+    color: #fff;
+    transition: 0.5s;
+}
+.sec-home-banner .my-an:hover ul li {
+    color: #fff;
+    transition: 0.5s;
+}
 /* #large-header {
     background-image: url('https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg');
 } */

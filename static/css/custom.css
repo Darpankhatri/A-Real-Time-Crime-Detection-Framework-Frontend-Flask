@@ -151,7 +151,7 @@ button:focus {
 .sec-home-banner .group-info {
     display: flex;
     justify-content: space-between;
-    width: 350px;
+    width: 500px;
     background-color: #fff;
     padding: 20px 40px;
     border-radius: 10px;

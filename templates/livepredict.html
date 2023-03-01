@@ -1,0 +1,87 @@
+{% extends "master.html" %}
+
+{% block title %}
+Predict Live
+{% endblock %}
+
+{% block content %}
+<section class="sec-home-banner" id="large-header">
+    <canvas id="demo-canvas"></canvas>
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8">
+                    <div class="main-desc">
+                        <h2>Lorem Ipsum</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis aliquam fuga
+                            quidem
+                            amet eum sed quibusdam velit ratione, pariatur asperiores, molestias consequuntur
+                            voluptatum itaque rerum sit perspiciatis ea, incidunt doloremque?
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis aliquam fuga
+                            quidem
+                            amet eum sed quibusdam velit ratione, pariatur asperiores, molestias consequuntur
+                            voluptatum itaque rerum sit perspiciatis ea, incidunt doloremque?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat minus repellendus
+                            commodi culpa expedita sit id voluptatum accusantium quisquam corporis, cumque
+                            sapiente!
+                            Numquam, aliquam doloribus porro officiis ea dicta repudiandae.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                    <div class="main-desc">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <form method="post">
+                                    <div class="mb-3">
+                                        <label class="form-label">Upload .mp4 File</label><br>
+                                        <!-- <label class="video-label" for="video" title="Upload File" style="cursor: pointer;">
+                                            <i class="fa-solid fa-cloud-arrow-up"
+                                                style="font-size:56px"></i><p></p>
+                                        </label> -->
+                                        <input type="file" accept="video/mp4" name="video" id="video"
+                                            style="display: none;">
+                                    </div>
+
+                                    <button class="btn btn-primary sub-video" type="submit"
+                                        style="float: right;">Upload</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).on('click', '.fa-cloud-arrow-up', function () {
+        $('.video-label').find('p').text("");
+        $('.video-label').find('i').removeClass("text-success");
+
+    });
+    $(document).on('click', '.sub-video', function (e) {
+        e.preventDefault();
+        var check_len = $("#video")[0].files.length;
+        if(check_len === 0){
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Upload File First',
+                text: '',
+            })
+        }
+    });
+    $(document).on('change', '#video', function (e) {
+        var filename = $('#video').val().replace(/.*(\/|\\)/, '');
+        console.log(filename);
+        if(filename){
+            $('.video-label').find('p').text(filename);
+            $('.fa-cloud-arrow-up').addClass("text-success");
+        }
+    });
+</script>
+{% endblock %}

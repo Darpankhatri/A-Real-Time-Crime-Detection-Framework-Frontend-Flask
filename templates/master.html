@@ -12,6 +12,7 @@
     <!-- <link rel="icon" href="images/fav-icon.png" type="image/png" sizes=""> -->
 
     <link href="{{ url_for('static',filename="css/bootstrap.css") }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static',filename="sweetalert2/sweetalert2.min.css") }}" rel="stylesheet" type="text/css">
     <link href="{{ url_for('static',filename="css/bootstrap.css.map") }}" rel="stylesheet" type="text/css">
     <link rel="icon" href="{{ url_for('static',filename="images/fav-icon.png") }}" type="image/png" sizes="">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
@@ -24,7 +25,7 @@
     <header class="header">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="#">SVS.</a>
+                <a class="navbar-brand" href="{{url_for("index")}}">DOV</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -33,19 +34,19 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{url_for("index")}}">Home</a>
+                            <a class="nav-link" href="{{url_for("index")}}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{url_for("about")}}">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Our Work</a>
+                            <a class="nav-link" href="{{url_for("ourwork")}}">Our Work</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Predict</a>
+                            <a class="nav-link" href="{{url_for("predict")}}">Predict</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Predict Live</a>
+                            <a class="nav-link" href="{{url_for("predictlive")}}">Predict Live</a>
                         </li>
                     </ul>
                 </div>
@@ -66,6 +67,7 @@
 
 
     <script src="{{ url_for('static',filename="js/jquery-3.6.0.min.js") }}"></script>
+    <script src="{{ url_for('static',filename="sweetalert2/sweetalert2.all.min.js") }}"></script>
     <script src="{{ url_for('static',filename="js/bootstrap.min.js") }}"></script>
     <script src="https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/EasePack.min.js"></script>
     <script src="https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/rAF.js"></script>

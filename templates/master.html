@@ -11,13 +11,15 @@
     <!-- <link href="css/custom.css" rel="stylesheet" type="text/css"> -->
     <!-- <link rel="icon" href="images/fav-icon.png" type="image/png" sizes=""> -->
 
-    <link href="{{ url_for('static',filename="css/bootstrap.css") }}" rel="stylesheet" type="text/css">
-    <link href="{{ url_for('static',filename="sweetalert2/sweetalert2.min.css") }}" rel="stylesheet" type="text/css">
-    <link href="{{ url_for('static',filename="css/bootstrap.css.map") }}" rel="stylesheet" type="text/css">
-    <link rel="icon" href="{{ url_for('static',filename="images/fav-icon.png") }}" type="image/png" sizes="">
+    <link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static',filename='sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static',filename='css/bootstrap.css.map') }}" rel="stylesheet" type="text/css">
+    <link rel="icon" href="{{ url_for('static',filename='images/fav-icon.png') }}" type="image/png" sizes="">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
     <link rel="stylesheet" href="https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/css/demo.css">
-    <link href="{{ url_for('static',filename="css/custom.css") }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static',filename='css/custom.css') }}" rel="stylesheet" type="text/css">
+    {% block css %}
+    {% endblock %}
 </head>
 
 <body>
@@ -25,7 +27,7 @@
     <header class="header">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="{{url_for("index")}}">DOV</a>
+                <a class="navbar-brand" href="{{url_for('index')}}">DOV</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -34,19 +36,19 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url_for("index")}}">Home</a>
+                            <a class="nav-link" href="{{url_for('index')}}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url_for("about")}}">About</a>
+                            <a class="nav-link" href="{{url_for('about')}}">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url_for("ourwork")}}">Our Work</a>
+                            <a class="nav-link" href="{{url_for('ourwork')}}">Our Work</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url_for("predict")}}">Predict</a>
+                            <a class="nav-link" href="{{url_for('predict')}}">Predict</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url_for("predictlive")}}">Predict Live</a>
+                            <a class="nav-link" href="{{url_for('predictlive')}}">Predict Live</a>
                         </li>
                     </ul>
                 </div>

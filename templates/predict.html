@@ -330,7 +330,7 @@ Predict
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8">
-                    <div class="main-desc">
+                    <div class="main-desc my-loader">
                         <div class="e-loadholder">
                             <div class="m-loader">
                                 <span class="e-text">Loading</span>
@@ -371,7 +371,7 @@ Predict
 {% endblock %}
 
 {% block scripts %}
-<script>
+<!-- <script>
     particlesJS("particleCanvas-Blue", {
         particles: {
             number: {
@@ -394,7 +394,7 @@ Predict
                     nb_sides: 3
                 },
                 image: {
-                    src: "img/github.svg",
+                    src: "{{ url_for('static',filename='js/custom.js') }}",
                     width: 100,
                     height: 100
                 }
@@ -505,7 +505,7 @@ Predict
                     nb_sides: 3
                 },
                 image: {
-                    src: "img/github.svg",
+                    src: "{{ url_for('static',filename='ball.png') }}",
                     width: 100,
                     height: 100
                 }
@@ -593,7 +593,7 @@ Predict
         },
         retina_detect: true
     });
-</script>
+</script> -->
 <script>
     $(document).on('click', '.fa-cloud-arrow-up', function () {
         $('.video-label').find('p').text("");
@@ -602,6 +602,11 @@ Predict
     });
     $(document).on('click', '.sub-video', function (e) {
         e.preventDefault();
+        $('.my-loader').html('<div class="e-loadholder">\
+                <div class="m-loader">\
+                    <span class="e-text">Loading</span>\
+                </div>\
+            </div>');
         var check_len = $("#video")[0].files.length;
         if (check_len === 0) {
 

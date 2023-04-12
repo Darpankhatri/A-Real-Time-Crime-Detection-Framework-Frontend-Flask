@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template, redirect, url_for, Response, jsonify
+import requests
 import cv2
 app = Flask(__name__)
 
@@ -22,6 +23,26 @@ def hello():
 def check(name):
     # return f"hello {name}"
     return redirect(url_for('about'))
+
+@app.route('/predictApi', methods=['GET'])
+def predictApi():
+    # Get the data from the POST request
+    # data = request.form['data']
+    data = [
+        "The quick brown fox jumps over the lazy cat.",
+        "The sun shines through the leaves of the tree.",
+        "The lazy dog",
+        "The dog sleeps in the shade of the tree."
+    ]
+
+    # Send a POST request to the Jupyter notebook API
+    response = requests.post('http://10.11.63.5:5000/predict&#39', json={'data': data})
+
+    # Get the prediction from the response
+    prediction = response.json()
+
+    # Return the prediction as a string response
+    return str(prediction)
 
 @app.route("/about")
 def about():

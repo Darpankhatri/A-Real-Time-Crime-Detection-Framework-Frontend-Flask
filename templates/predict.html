@@ -337,13 +337,13 @@ Predict
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8">
                     <div class="main-desc my-loader">
-                        <div class="e-loadholder">
+                        <!-- <div class="e-loadholder">
                             <div class="m-loader">
                                 <span class="e-text">Loading</span>
                             </div>
                         </div>
                         <div id="particleCanvas-Blue"></div>
-                        <div id="particleCanvas-White"></div>
+                        <div id="particleCanvas-White"></div> -->
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
@@ -351,7 +351,7 @@ Predict
                         <div class="card">
                             <div class="card-body">
 
-                                <form method="post">
+                                <form id="uploadForm" enctype="multipart/form-data">
                                     <div class="mb-3">
                                         <label class="form-label">Upload .mp4 File</label><br>
                                         <label class="video-label" for="video" title="Upload File"
@@ -359,7 +359,8 @@ Predict
                                             <i class="fa-solid fa-cloud-arrow-up" style="font-size:56px"></i>
                                             <p></p>
                                         </label>
-                                        <input type="file" accept="video/mp4" name="video" id="video"
+                                        <!-- <input type="text" name="myname" id="ss" value="5"> -->
+                                        <input type="file" name="fileup" id="video"
                                             style="display: none;">
                                     </div>
 
@@ -608,11 +609,7 @@ Predict
     });
     $(document).on('click', '.sub-video', function (e) {
         e.preventDefault();
-        $('.my-loader').html('<div class="e-loadholder">\
-                <div class="m-loader">\
-                    <span class="e-text">Loading</span>\
-                </div>\
-            </div>');
+        
         var check_len = $("#video")[0].files.length;
         if (check_len === 0) {
 
@@ -621,6 +618,34 @@ Predict
                 title: 'Upload File First',
                 text: '',
             })
+        }
+        else{
+            var formData = new FormData($('#uploadForm')[0]);
+            $('.my-loader').html('<div class="e-loadholder">\
+                <div class="m-loader">\
+                    <span class="e-text">Loading</span>\
+                </div>\
+            </div>');
+            // Send AJAX request to Flask server
+            $.ajax({
+                url: '/upload', // URL for your Flask route that handles the image upload
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                // Handle success response
+                    $('.my-loader').html("<h3>"+response.message+"</h3>");
+                    console.log(response);
+                    $('.video-label').find('p').text("");
+                    $('.video-label').find('i').removeClass("text-success");
+                    $('#video').val('');
+                },
+                error: function(error) {
+                // Handle error response
+                console.error("here",error);
+                }
+            });
         }
     });
     $(document).on('change', '#video', function (e) {

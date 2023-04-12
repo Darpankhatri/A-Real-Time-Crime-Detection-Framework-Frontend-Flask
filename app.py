@@ -1,10 +1,17 @@
 from flask import Flask, request, render_template, redirect, url_for, Response, jsonify
 import requests
 import cv2
+import logs
+
 app = Flask(__name__)
 
+# set Log
+app.logger.addHandler(logs.file_handler)
+app.logger.setLevel(logs.logging.DEBUG)
+# set Log
+
 camera = cv2.VideoCapture(0)
-def gen_frames():  
+def gen_frames():
     while True:
         success, frame = camera.read()  # read the camera frame
         if not success:
@@ -26,8 +33,6 @@ def check(name):
 
 @app.route('/predictApi', methods=['GET'])
 def predictApi():
-    # Get the data from the POST request
-    # data = request.form['data']
     data = [
         "The quick brown fox jumps over the lazy cat.",
         "The sun shines through the leaves of the tree.",
@@ -43,6 +48,31 @@ def predictApi():
 
     # Return the prediction as a string response
     return str(prediction)
+
+@app.route('/upload', methods=['POST'])
+def upload():
+    file = request.files['fileup']
+    if file:
+        print(file.filename)
+        file.save('static/test/' + file.filename)  # Save the file to a desired location
+        app.logger.info('file saved -> static/test/' + file.filename)
+        with open('static/test/'+ file.filename, 'rb') as file:
+            # Create a dictionary to hold the file data
+            files = {'image': file}
+            
+            # Send a POST request to the Flask API with the image file as data
+            # response = requests.post("url", files=files)
+        data = {
+            'message': 'Image uploaded and saved successfully',
+            'success': True
+        }
+    else:
+        data = {
+            'message': 'File Not Found',
+            'success': False
+        }
+
+    return jsonify(data)
 
 @app.route("/about")
 def about():

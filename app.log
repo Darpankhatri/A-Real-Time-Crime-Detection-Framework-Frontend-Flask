@@ -1,1 +1,54 @@
-2023-04-12 18:29:28,280 - INFO - file saved -> static/test/ball.png
+2023-04-13 08:45:33,262 - INFO - file saved -> static/test/2nd Innings Highlights _ Pakistan vs England _ 3rd T20I 2022 _ PCB _ MU2T - YouTube - Opera 9_24_2022 1_40_38 AM.png
+2023-04-13 11:44:14,218 - INFO - file saved -> static/test/newplot.png
+2023-04-13 11:44:35,320 - ERROR - HTTPConnectionPool(host='192.168.205.17', port=5000): Max retries exceeded with url: /imgcheck (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000024AAF16A800>, 'Connection to 192.168.205.17 timed out. (connect timeout=None)'))
+2023-04-13 11:45:32,176 - INFO - file saved -> static/test/newplot.png
+2023-04-13 11:46:25,571 - INFO - file saved -> static/test/newplot.png
+2023-04-13 11:48:14,847 - INFO - file saved -> static/test/newplot.png
+2023-04-13 12:03:08,226 - INFO - file saved -> static/test/screencapture-mcqs-club-computer-fundamental-mcqs-governance-and-management-of-it-mcqs-cisa-2023-03-25-08_48_53.png
+2023-04-13 12:03:10,286 - ERROR - HTTPConnectionPool(host='10.42.0.109', port=80): Max retries exceeded with url: /imgcheck (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000017B8BC70D00>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-04-13 12:04:03,289 - INFO - file saved -> static/test/WhatsApp Image 2023-04-03 at 12.03.31 AM.jpeg
+2023-04-13 12:04:05,345 - ERROR - HTTPConnectionPool(host='10.42.0.109', port=80): Max retries exceeded with url: /imgcheck (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000017B8BC73190>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-04-13 12:05:23,067 - INFO - file saved -> static/test/screencapture-mcqs-club-computer-fundamental-mcqs-governance-and-management-of-it-mcqs-cisa-2023-03-25-08_48_53.png
+2023-04-13 12:05:23,586 - ERROR - Expecting value: line 1 column 1 (char 0)
+2023-04-13 12:06:37,523 - INFO - file saved -> static/test/screencapture-mcqs-club-computer-fundamental-mcqs-governance-and-management-of-it-mcqs-cisa-2023-03-25-08_48_53.png
+2023-04-13 12:06:37,573 - ERROR - Expecting value: line 1 column 1 (char 0)
+2023-04-13 12:07:27,758 - INFO - file saved -> static/test/certs_page-0002.jpg
+2023-04-13 12:09:51,587 - INFO - file saved -> static/test/certs_page-0002.jpg
+2023-04-13 12:13:02,545 - INFO - file saved -> static/test/screencapture-mcqs-club-computer-fundamental-mcqs-governance-and-management-of-it-mcqs-cisa-2023-03-25-08_48_53.png
+2023-04-13 12:13:52,461 - INFO - file saved -> static/test/screencapture-mcqs-club-computer-fundamental-mcqs-governance-and-management-of-it-mcqs-cisa-2023-03-25-08_48_53.png
+2023-04-13 14:26:25,351 - INFO - file saved -> static/test/2008_003575.jpg
+2023-04-13 14:26:25,563 - ERROR - Expecting value: line 1 column 1 (char 0)
+2023-04-13 14:29:20,729 - INFO - file saved -> static/test/2008_002221.jpg
+2023-04-13 14:29:20,871 - ERROR - Expecting value: line 1 column 1 (char 0)
+2023-04-13 14:32:32,294 - INFO - file saved -> static/test/2008_003041.jpg
+2023-04-13 14:32:33,035 - ERROR - Expecting value: line 1 column 1 (char 0)
+2023-04-13 14:34:53,853 - INFO - file saved -> static/test/2008_003688.jpg
+2023-04-13 14:34:54,543 - ERROR - Expecting value: line 1 column 1 (char 0)
+2023-04-13 14:36:29,670 - INFO - file saved -> static/test/2008_003703.jpg
+2023-04-13 14:36:29,706 - INFO - {'classe': 'classe'}
+2023-04-13 14:37:40,665 - INFO - file saved -> static/test/2008_004239.jpg
+2023-04-13 14:37:41,391 - ERROR - Expecting value: line 1 column 1 (char 0)
+2023-04-13 14:38:35,031 - INFO - file saved -> static/test/2008_004917.jpg
+2023-04-13 14:38:35,665 - ERROR - Expecting value: line 1 column 1 (char 0)
+2023-04-13 14:39:30,927 - INFO - file saved -> static/test/2008_004917.jpg
+2023-04-13 14:39:31,603 - ERROR - Expecting value: line 1 column 1 (char 0)
+2023-04-13 14:40:17,512 - INFO - file saved -> static/test/2008_005310.jpg
+2023-04-13 14:40:18,163 - ERROR - Expecting value: line 1 column 1 (char 0)
+2023-04-13 14:41:30,499 - INFO - file saved -> static/test/2008_005634.jpg
+2023-04-13 14:41:31,182 - ERROR - Expecting value: line 1 column 1 (char 0)
+2023-04-13 14:42:08,399 - INFO - file saved -> static/test/2008_005634.jpg
+2023-04-13 14:42:08,941 - ERROR - Expecting value: line 1 column 1 (char 0)
+2023-04-13 14:44:58,038 - INFO - file saved -> static/test/2008_004917.jpg
+2023-04-13 14:44:58,711 - INFO - {'predicted_classes': [0], 'predicted_probabilities': [1.0]}
+2023-04-13 14:48:55,728 - INFO - file saved -> static/test/2008_001402.jpg
+2023-04-13 14:48:56,294 - INFO - {'predicted_classes': [1], 'predicted_probabilities': [1.0]}
+2023-04-13 14:49:11,174 - INFO - file saved -> static/test/2008_000567.jpg
+2023-04-13 14:49:11,895 - INFO - {'predicted_classes': [0], 'predicted_probabilities': [1.0]}
+2023-04-13 14:49:29,031 - INFO - file saved -> static/test/2008_002422.jpg
+2023-04-13 14:49:29,673 - INFO - {'predicted_classes': [1], 'predicted_probabilities': [0.9999982118606567]}
+2023-04-13 14:53:56,039 - INFO - file saved -> static/test/2008_000756.jpg
+2023-04-13 14:53:58,439 - ERROR - HTTPConnectionPool(host='10.42.0.109', port=5000): Max retries exceeded with url: /imgcheck (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001AFF74DC280>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-04-13 14:56:27,108 - INFO - file saved -> static/test/2008_001402.jpg
+2023-04-13 14:56:28,410 - INFO - {'predicted_classes': [1], 'predicted_probabilities': [1.0]}
+2023-04-13 14:56:49,431 - INFO - file saved -> static/test/2008_002000.jpg
+2023-04-13 14:56:50,685 - INFO - {'predicted_classes': [0], 'predicted_probabilities': [1.0]}

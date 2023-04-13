@@ -41,38 +41,37 @@ def predictApi():
     ]
 
     # Send a POST request to the Jupyter notebook API
-    response = requests.post('http://10.11.63.5:5000/predict&#39', json={'data': data})
-
+    response = requests.post('http://192.168.205.17:5000/predict', json={'data': data})
     # Get the prediction from the response
     prediction = response.json()
+    return prediction
 
     # Return the prediction as a string response
     return str(prediction)
 
 @app.route('/upload', methods=['POST'])
 def upload():
-    file = request.files['fileup']
-    if file:
-        print(file.filename)
-        file.save('static/test/' + file.filename)  # Save the file to a desired location
-        app.logger.info('file saved -> static/test/' + file.filename)
-        with open('static/test/'+ file.filename, 'rb') as file:
-            # Create a dictionary to hold the file data
-            files = {'image': file}
+    try:
+        file = request.files['fileup']
+        if file:
+            print(file.filename)
+            file.save('static/test/' + file.filename)  # Save the file to a desired location
+            app.logger.info('file saved -> static/test/' + file.filename)
+            file_img = "http://127.0.0.1:5000/static/test/"+file.filename
             
             # Send a POST request to the Flask API with the image file as data
-            # response = requests.post("url", files=files)
-        data = {
-            'message': 'Image uploaded and saved successfully',
-            'success': True
-        }
-    else:
-        data = {
-            'message': 'File Not Found',
-            'success': False
-        }
-
-    return jsonify(data)
+            response = requests.post("http://10.42.0.109:5000/imgcheck", json={'file':file_img})
+            prediction = response.json()
+            app.logger.info(str(prediction))
+            return str(prediction),200
+        else:
+            return jsonify({'message': 'File Not Found'}),404
+        
+    except Exception as e:
+        app.logger.error(str(e))
+        msg = str(e)
+        return jsonify({'message':msg})
+    
 
 @app.route("/about")
 def about():

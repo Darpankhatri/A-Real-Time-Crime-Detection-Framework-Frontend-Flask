@@ -635,17 +635,19 @@ Predict
                 contentType: false,
                 success: function(response) {
                 // Handle success response
-                    $('.my-loader').html("<h3>"+response.message+"</h3>");
+                    $('.my-loader').html("<h3>"+response+"</h3>");
                     console.log(response);
-                    $('.video-label').find('p').text("");
-                    $('.video-label').find('i').removeClass("text-success");
-                    $('#video').val('');
                 },
                 error: function(error) {
                 // Handle error response
-                console.error("here",error);
+                    $('.my-loader').html("<h3>"+error+"</h3>");
+                    
+                    console.error("here",error);
                 }
             });
+            $('.video-label').find('p').text("");
+            $('.video-label').find('i').removeClass("text-success");
+            $('#video').val('');
         }
     });
     $(document).on('change', '#video', function (e) {

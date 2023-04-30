@@ -2,6 +2,8 @@ from flask import Flask, request, render_template, redirect, url_for, Response, 
 import requests
 import cv2
 import logs
+from flask_mail import Mail, Message
+from config import mailConfig
 
 app = Flask(__name__)
 
@@ -9,6 +11,9 @@ app = Flask(__name__)
 app.logger.addHandler(logs.file_handler)
 app.logger.setLevel(logs.logging.DEBUG)
 # set Log
+
+app.config.from_object(mailConfig)
+mail = Mail(app)
 
 camera = cv2.VideoCapture(0)
 def gen_frames():
@@ -97,6 +102,9 @@ def video_feed():
 
 @app.route("/our-work")
 def ourwork():
+    # msg = Message('dd from the other side!', sender =   'peter@mailtrap.io', recipients = ['paul@mailtrap.io'])
+    # msg.html = render_template('email_template.html', name='User', content='Thanks for using!')
+    # mail.send(msg)
     return render_template('ourwork.html')
 
 @app.route('/done')

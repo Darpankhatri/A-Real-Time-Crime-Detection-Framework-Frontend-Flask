@@ -204,10 +204,6 @@ Predict
         text-transform: uppercase;
     }
 
-    .sec-home-banner .main-desc{
-        height: 281px !important;
-    }
-
     .e-loadholder .m-loader:after {
         position: absolute;
         top: 50%;
@@ -322,15 +318,18 @@ Predict
     }
 </style>
 <style>
-    .m-loader span{
-        color: #000 !important;
-        font-weight: 550;
+    .sub-video{
+        width: 120px;
+        height: 40px;
+        float: right;
+        font-size: 17px;
     }
 </style>
+
 {% endblock %}
 
 {% block content %}
-<section class="sec-home-banner" id="large-header">
+<section class="sec-home-banner my-data" id="large-header">
     <canvas id="demo-canvas"></canvas>
     <div class="content">
         <div class="container">
@@ -345,7 +344,7 @@ Predict
                             <li>This should take you to the downloaded folder on your device.</li>
                             <li>Select the file you want to verify.</li>
                             <li>Uploaded files should be posted. If there are any uncertain outcomes in this procedure, ensure these requirements are met.</li>
-                            <ul style="list-style:circle;">
+                            <ul style="list-style:decimal;">
                                 <li>Your internet connection is stable.</li>
                                 <li>Files are completed downloaded and in a compatible format.</li>
                             </ul>
@@ -373,7 +372,7 @@ Predict
                                     </div>
 
                                     <button class="btn btn-primary sub-video" type="submit"
-                                        style="float: right;">Upload</button>
+                                        style="float: right;">Predict</button>
                                 </form>
                             </div>
                         </div>

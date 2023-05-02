@@ -97,6 +97,73 @@ button:focus {
 
 /* header css end */
 
+/* / terms & condition start  / */
+.sec-contents {
+    position: relative;
+    background: transparent;
+    margin: 0;
+    padding: 150px 0 70px 0;
+}
+
+.sec-contents .content{
+    padding: 20px 20px;
+    border-radius: 10px;
+    text-align: left;
+    background: #fff;
+}
+
+.my-data .content h6 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    line-height: 28px;
+    font-weight: 700;
+    color: #6b32dc;
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+.my-data .content h5 {
+  font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    /* / line-height: 24px; / */
+    color: #242424;
+    text-transform: capitalize;
+    margin: 20px 0 20px 0;
+    padding: 0;
+}
+
+.my-data .content p {
+  font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #303030;
+    margin: 0 0 15px 0;
+    padding: 0;
+}
+
+.my-data .content ul {
+    position: relative;
+    padding: 0 0 0 25px;
+    list-style: disc;
+}
+
+.my-data .content ul li {
+  font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #303030;
+    margin: 0 0 15px 0;
+    position: relative;
+    padding: 0;
+}
+
+/* / terms & condition end  / */
+
+
 /* main-css start */
 .sec-home-banner {
     background-color: #000;

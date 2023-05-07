@@ -52,3 +52,8 @@
 2023-04-13 14:56:28,410 - INFO - {'predicted_classes': [1], 'predicted_probabilities': [1.0]}
 2023-04-13 14:56:49,431 - INFO - file saved -> static/test/2008_002000.jpg
 2023-04-13 14:56:50,685 - INFO - {'predicted_classes': [0], 'predicted_probabilities': [1.0]}
+2023-05-07 21:51:01,791 - ERROR - redirect() got an unexpected keyword argument 'message'
+2023-05-07 21:51:32,039 - ERROR - redirect() got an unexpected keyword argument 'message'
+2023-05-07 22:16:49,549 - ERROR - The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2023-05-07 22:19:53,299 - ERROR - The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2023-05-07 22:24:38,111 - ERROR - can only concatenate list (not "str") to list

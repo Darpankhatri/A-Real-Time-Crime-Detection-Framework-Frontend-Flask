@@ -1,7 +1,8 @@
-from flask import Flask, request, render_template, redirect, url_for, Response, jsonify
+from flask import Flask,flash, request, render_template, redirect, url_for, Response, jsonify
 import requests
 import cv2
 import logs
+import os
 from flask_mail import Mail, Message
 from config import mailConfig
 from threading import Thread
@@ -15,6 +16,8 @@ app.logger.setLevel(logs.logging.DEBUG)
 
 app.config.from_object(mailConfig)
 mail = Mail(app)
+
+app.secret_key = os.environ.get('SECRET_KEY')
 
 def send_async_email(app, msg):
     with app.app_context():
@@ -88,6 +91,27 @@ def about():
     var1 = "Darpan"
     return render_template('about.html',varval = var1)
 
+@app.route('/subscriber', methods=['POST'])
+def subscriber():
+    try:
+        email = request.form['email']
+        msg = Message('Subscribe DOV', sender =   'info@dov.com', recipients = email)
+        msg.html = render_template('emails/subscribe.html', content='Thanks for using!')
+        thr = Thread(target=send_async_email, args=[app, msg])
+        thr.start()
+        mail.send(msg)
+        message = "Subscribe Successfully!"
+        status=1
+        # flash("Login successful!", "success")
+        return redirect(request.url)
+    except Exception as e:
+        app.logger.error(str(e))
+        msg = str(e)
+        error = "Something went wrong!"
+        status=0
+        # flash("Login successful!", "success")
+        return msg
+    
 
 @app.route("/index")
 def index():
@@ -107,11 +131,6 @@ def video_feed():
 
 @app.route("/our-work")
 def ourwork():
-    # msg = Message('dd from the other side!', sender =   'peter@mailtrap.io', recipients = ['paul@mailtrap.io','vinay@gmail.com','om@gmail.com','darpan@gmail.com'])
-    # msg.html = render_template('email_template.html', name='User', content='Thanks for using!')
-    # thr = Thread(target=send_async_email, args=[app, msg])
-    # thr.start()
-    # mail.send(msg)
     return render_template('ourwork.html')
 
 @app.route('/done')

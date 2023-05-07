@@ -67,13 +67,13 @@
                     <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5">
                         <div class="ft-box">
                             <img src="{{ url_for('static',filename='images/logo4.png') }}" style="height: 140px;" class="img-fluid ft-thumb" alt="">
-                            <p>What we classify?</p>
+                            <!-- <p>What we classify?</p> -->
                             <div class="news-letter">
-                                <form action="">
+                                <form action="{{url_for('subscriber')}}" method="post">
                                     <div class="row">
                                         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                                             <div class="input-main">
-                                                <input type="email" placeholder="email" class="form-control mail-ctl"
+                                                <input type="email" placeholder="email" name="email" class="form-control mail-ctl"
                                                     required>
                                                 <button class="btn submit-btn" type="submit">submit</button>
                                             </div>

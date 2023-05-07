@@ -59,8 +59,8 @@ Home
                         
                     </div>
                     <div class="desc">
-                        <a href="void:;" class="title"><strong>CARP</strong></a>
-                        <span class="sm-txt">Crime Agenst Person</span>
+                        <a href="void:;" class="title"><strong>CAPR</strong></a>
+                        <span class="sm-txt">Crime Agenst Property</span>
                         <p>Physical abuse torucshar or abduction.</p>
                         <a href="{{url_for('predict')}}" class="btn cart-btn">
                             <span class="anim">View</span>
@@ -141,6 +141,15 @@ Home
 
                 <div class="form-detail">
                     <h4>Contact Us</h4>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">
+                                {{ message }}
+                            </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
                     <form action="">
                             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                                 <div class="form-group">

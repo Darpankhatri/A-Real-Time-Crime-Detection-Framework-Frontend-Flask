@@ -57,3 +57,9 @@
 2023-05-07 22:16:49,549 - ERROR - The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
 2023-05-07 22:19:53,299 - ERROR - The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
 2023-05-07 22:24:38,111 - ERROR - can only concatenate list (not "str") to list
+2023-05-10 23:27:17,041 - ERROR - can only concatenate list (not "str") to list
+2023-05-10 23:36:19,466 - INFO - subscriber redirect url: http://127.0.0.1:5000/subscriber
+2023-05-10 23:58:34,931 - INFO - http://127.0.0.1:5000/index
+2023-05-11 00:01:40,803 - INFO - subscriber redirect url1: http://127.0.0.1:5000/subscriber
+2023-05-11 00:01:41,691 - INFO - subscriber redirect url: http://127.0.0.1:5000/subscriber
+2023-05-11 00:13:05,491 - ERROR - flash() takes from 1 to 2 positional arguments but 3 were given

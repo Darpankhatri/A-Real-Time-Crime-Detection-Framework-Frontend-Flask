@@ -41,7 +41,6 @@ def hello():
 
 @app.route("/<name>")
 def check(name):
-    # return f"hello {name}"
     return redirect(url_for('about'))
 
 @app.route('/predictApi', methods=['GET'])
@@ -95,21 +94,20 @@ def about():
 def subscriber():
     try:
         email = request.form['email']
-        msg = Message('Subscribe DOV', sender =   'info@dov.com', recipients = email)
+        msg = Message('Subscribe DOV', sender =   'info@dov.com', recipients = [email])
         msg.html = render_template('emails/subscribe.html', content='Thanks for using!')
         thr = Thread(target=send_async_email, args=[app, msg])
         thr.start()
-        mail.send(msg)
         message = "Subscribe Successfully!"
         status=1
-        # flash("Login successful!", "success")
-        return redirect(request.url)
+        flash("Subscribe Successfully!", "success")
+        return redirect(url_for('index'))
     except Exception as e:
         app.logger.error(str(e))
         msg = str(e)
         error = "Something went wrong!"
         status=0
-        # flash("Login successful!", "success")
+        flash("Login successful!", "warning")
         return msg
     
 

@@ -63,3 +63,5 @@
 2023-05-11 00:01:40,803 - INFO - subscriber redirect url1: http://127.0.0.1:5000/subscriber
 2023-05-11 00:01:41,691 - INFO - subscriber redirect url: http://127.0.0.1:5000/subscriber
 2023-05-11 00:13:05,491 - ERROR - flash() takes from 1 to 2 positional arguments but 3 were given
+2023-05-11 01:01:19,499 - DEBUG - http://127.0.0.1:5000/index
+2023-05-11 01:04:39,702 - DEBUG - http://127.0.0.1:5000/our-work

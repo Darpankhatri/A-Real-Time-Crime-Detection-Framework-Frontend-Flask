@@ -98,17 +98,17 @@ def subscriber():
         msg.html = render_template('emails/subscribe.html', content='Thanks for using!')
         thr = Thread(target=send_async_email, args=[app, msg])
         thr.start()
-        message = "Subscribe Successfully!"
-        status=1
+        
         flash("Subscribe Successfully!", "success")
-        return redirect(url_for('index'))
+        return redirect(request.referrer)
+        
     except Exception as e:
         app.logger.error(str(e))
         msg = str(e)
-        error = "Something went wrong!"
-        status=0
-        flash("Login successful!", "warning")
-        return msg
+        
+        flash("Something went wrong try again after 1 minute.", "error")
+        return redirect(request.referrer)
+        
     
 
 @app.route("/index")

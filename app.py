@@ -23,9 +23,15 @@ def send_async_email(app, msg):
     with app.app_context():
         mail.send(msg)
 
-camera = cv2.VideoCapture(0)
+stop_camera = True
+
 def gen_frames():
+    global stop_camera
+    camera = cv2.VideoCapture(0)
     while True:
+        if stop_camera:
+            camera.release()
+            break
         success, frame = camera.read()  # read the camera frame
         if not success:
             break
@@ -34,6 +40,19 @@ def gen_frames():
             frame = buffer.tobytes()
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')  # concat frame one by one and show result
+    camera.release()
+
+def capture_frame():
+    cap = cv2.VideoCapture(0)
+    ret, frame = cap.read()
+    cap.release()
+    return frame
+
+def send_frame(frame):
+    url = 'http://localhost:8888/predict'
+    headers = {'Content-type': 'image/jpeg'}
+    response = requests.post(url, data=frame.tostring(), headers=headers)
+    return response.text
 
 @app.route("/")
 def hello():
@@ -121,6 +140,8 @@ def predict():
 
 @app.route("/live-predict")
 def predictlive():
+    global stop_camera
+    stop_camera = False
     return render_template('livepredict.html')
 
 @app.route('/video_feed')
@@ -133,9 +154,9 @@ def ourwork():
 
 @app.route('/done')
 def done():
-    if camera.isOpened():
-        print("Releasing cam feed")
-        camera.release()
+    # cv2.destroyAllWindows()
+    global stop_camera
+    stop_camera = True
     return jsonify("done")
 
 

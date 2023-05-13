@@ -93,7 +93,7 @@ def upload():
             # Send a POST request to the Flask API with the image file as data
             response = requests.post("http://10.42.0.109:5000/imgcheck", json={'file':file_img})
             prediction = response.json()
-            app.logger.info(str(prediction))
+            app.logger.debug(str(prediction))
             return str(prediction),200
         else:
             return jsonify({'message': 'File Not Found'}),404
@@ -155,9 +155,37 @@ def ourwork():
 @app.route('/done')
 def done():
     # cv2.destroyAllWindows()
+    msg = {
+        "message": "Already Closed",
+        "status": 0
+    }
+    
     global stop_camera
-    stop_camera = True
-    return jsonify("done")
+    if stop_camera == False:
+        stop_camera = True
+        msg = {
+            "message": "Camera Closed",
+            "status": 1            
+        }
+    
+    return msg
 
+@app.route('/restartCamera')
+def restartCamera():
+    # cv2.destroyAllWindows()
+    msg = {
+        "message": "Already Open",
+        "status": 0
+    }
+    
+    global stop_camera
+    if stop_camera:
+        stop_camera = False
+        msg = {
+            "message": "Camera Open",
+            "status": 1            
+        }
+    
+    return msg
 
 app.run(debug = True)

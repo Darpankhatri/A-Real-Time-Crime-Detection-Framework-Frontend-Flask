@@ -185,6 +185,10 @@ button:focus {
     padding: 150px 0;
 }
 
+.sec-home-banner .my-loader {
+    min-height: 400px;
+}
+
 .sec-home-banner .main-desc {
     background-color: #fff;
     padding: 50px 40px;

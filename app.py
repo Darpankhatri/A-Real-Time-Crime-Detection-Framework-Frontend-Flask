@@ -20,8 +20,11 @@ mail = Mail(app)
 app.secret_key = os.environ.get('SECRET_KEY')
 
 def send_async_email(app, msg):
-    with app.app_context():
-        mail.send(msg)
+    try:
+        with app.app_context():
+            mail.send(msg)
+    except Exception as e:
+        app.logger.error("Email error"+str(e))
 
 stop_camera = True
 

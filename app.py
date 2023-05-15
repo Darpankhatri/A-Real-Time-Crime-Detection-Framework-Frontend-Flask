@@ -4,7 +4,7 @@ import cv2
 import logs
 import os
 from flask_mail import Mail, Message
-from config import mailConfig
+from config import mailConfig, pusharConfig
 from threading import Thread
 
 app = Flask(__name__)
@@ -155,6 +155,10 @@ def video_feed():
 def ourwork():
     return render_template('ourwork.html')
 
+@app.route("/pusher")
+def pusher():
+    return render_template('pusher.html')
+
 @app.route('/done')
 def done():
     # cv2.destroyAllWindows()
@@ -170,7 +174,7 @@ def done():
             "message": "Camera Closed",
             "status": 1            
         }
-    
+    pusharConfig.pusher_client.trigger('my-channel', 'my-event', {'message': 'hello world'})
     return msg
 
 @app.route('/restartCamera')

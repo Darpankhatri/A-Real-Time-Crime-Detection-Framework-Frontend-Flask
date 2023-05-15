@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Pusher Test</title>
+    <script src="{{ url_for('static',filename='js/jquery-3.6.0.min.js') }}"></script>
+    <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
+    <script>
+        var cnt = 0;
+        // Enable pusher logging - don't include this in production
+        Pusher.logToConsole = true;
+
+        var pusher = new Pusher('7ed2d947794656980f72', {
+            cluster: 'ap1'
+        });
+
+        var channel = pusher.subscribe('my-channel');
+        channel.bind('my-event', function (data) {
+            cnt += 1
+            $("#event-cnt").text(cnt);
+            console.log("here")
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Pusher Test</h1>
+    <p>
+        Try publishing an event to channel <code>my-channel</code>
+        with event name <code>my-event</code>.
+    </p>
+    <p id="event-cnt">
+    </p>
+</body>

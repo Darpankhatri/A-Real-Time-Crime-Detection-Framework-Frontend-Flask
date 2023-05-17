@@ -4,37 +4,74 @@
 Predict Live
 {% endblock %}
 
+{% block css %}
+<style>
+    .button-73 {
+        appearance: none;
+        background-color: #FFFFFF;
+        border-radius: 40em;
+        border-style: none;
+        box-shadow: #ADCFFF 0 -12px 6px inset;
+        box-sizing: border-box;
+        color: #000000;
+        cursor: pointer;
+        display: inline-block;
+        font-family: -apple-system, sans-serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: -.24px;
+        margin: 0;
+        outline: none;
+        padding: 1rem 1.3rem;
+        quotes: auto;
+        text-align: center;
+        text-decoration: none;
+        transition: all .15s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: 100%;
+    }
+
+    .button-73:hover {
+        background-color: #6b32dc;
+        box-shadow: #000 0 -6px 8px inset;
+        color: #fff;
+        transform: scale(1.125);
+    }
+
+    .button-73:active {
+        transform: scale(1.025);
+    }
+
+    .container .row .main-desc {
+        background: rgba(140, 91, 91, 0.07) !important;
+    }
+
+    @media (min-width: 768px) {
+        .button-73 {
+            font-size: 1.5rem;
+            padding: .75rem 2rem;
+        }
+    }
+</style>
+{% endblock %}
+
 {% block content %}
 <section class="sec-home-banner" id="large-header">
     <canvas id="demo-canvas"></canvas>
     <div class="content">
         <div class="container">
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8">
+            <div class="row justify-content-center">
+                <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8">
                     <div class="main-desc my-loader">
-                        <!-- <h2>Lorem Ipsum</h2> -->
+                        <h2>Lorem Ipsum</h2> 
                         <img src="{{ url_for('video_feed') }}" width="100%">
                     </div>
-                </div>
+                </div> -->
                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mb-20">
-                            <div class="main-desc">
-                                <div class="card">
-                                    <div class="card-body">
-
-                                        <button class="btn btn-danger sub-video" type="button">Stop</button>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" style="display:none;">
-                            <div class="main-desc">
-                                <p>findings here
-                                </p>
-                            </div>
-                        </div>
+                    <div class="main-desc">
+                        <button class="button-73 live-video" type="button">Start</button>
                     </div>
                 </div>
             </div>
@@ -42,9 +79,25 @@ Predict Live
     </div>
 </section>
 {% endblock %}
- 
+
 {% block scripts %}
 <script>
+    $(document).on('click', '.live-video', function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: "get",
+            dataType: "json",
+            url: '{{ url_for("startCamera") }}',
+            data: {},
+            success: function (data) {
+                if (data.status) {
+                    toastr.success(data.message);
+                } else {
+                    toastr.error(data.message);
+                }
+            }
+        });
+    });
 
     $(document).on('click', '.sub-video', function (e) {
         e.preventDefault();
@@ -54,10 +107,10 @@ Predict Live
             url: '{{ url_for("done") }}',
             data: {},
             success: function (data) {
-                if(data.status){
+                if (data.status) {
                     toastr.success(data.message);
-                    
-                }else{
+
+                } else {
                     toastr.error(data.message);
                 }
             }

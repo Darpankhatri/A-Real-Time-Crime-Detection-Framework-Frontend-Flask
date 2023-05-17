@@ -33,7 +33,6 @@ def gen_frames():
     camera = cv2.VideoCapture(0)
     while True:
         if stop_camera:
-            camera.release()
             break
         success, frame = camera.read()  # read the camera frame
         if not success:
@@ -45,17 +44,6 @@ def gen_frames():
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')  # concat frame one by one and show result
     camera.release()
 
-def capture_frame():
-    cap = cv2.VideoCapture(0)
-    ret, frame = cap.read()
-    cap.release()
-    return frame
-
-def send_frame(frame):
-    url = 'http://localhost:8888/predict'
-    headers = {'Content-type': 'image/jpeg'}
-    response = requests.post(url, data=frame.tostring(), headers=headers)
-    return response.text
 
 @app.route("/")
 def hello():
@@ -94,11 +82,22 @@ def upload():
             file_img = file.filename
             print(file_img)
             # Send a POST request to the Flask API with the image file as data
-            response = requests.post("http://192.168.18.17:5000/imgcheck", json={'file':file_img})
+            response = requests.post("http://192.168.0.102:5000/imgcheck", json={'file':file_img})
             prediction = response.json()
-            app.logger.debug(prediction);
-            # app.logger.debug(str(prediction))
-            return str(prediction),200
+            app.logger.debug(prediction)
+            predictClass = prediction["predicted_classes"]
+            predictProb = prediction["predicted_probabilities"]
+            
+            # email
+            email = request.form['email']
+            if(email):
+                print('yes')
+                msg = Message('DOV Alert', sender ='info@dov.com', recipients = [email])
+                msg.html = render_template('emails/alert_email.html', crimeClass=prediction["predicted_classes"])
+                thr = Thread(target=send_async_email, args=[app, msg])
+                thr.start()
+        
+            return jsonify({"class":predictClass,"prob":str(predictProb)}),200
         else:
             return jsonify({'message': 'File Not Found'}),404
         
@@ -162,7 +161,7 @@ def pusher():
 
 @app.route("/alert")
 def alert():
-    return render_template('emails/alert_email.html')
+    return render_template('emails/alert_email.html',crimeClass="sdd")
 
 @app.route('/done')
 def done():
@@ -182,21 +181,21 @@ def done():
     pusharConfig.pusher_client.trigger('my-channel', 'my-event', {'message': 'hello world'})
     return msg
 
-@app.route('/restartCamera')
-def restartCamera():
-    # cv2.destroyAllWindows()
+@app.route('/startCamera')
+def startCamera():
+    app.logger.info("live")
     msg = {
-        "message": "Already Open",
-        "status": 0
+        "message": "Camera start in few seconds.",
+        "status": 1
     }
-    
-    global stop_camera
-    if stop_camera:
-        stop_camera = False
-        msg = {
-            "message": "Camera Open",
-            "status": 1            
-        }
+    try:
+        response = requests.post("http://192.168.0.102:5000/liveCheck")
+        app.logger.debug("Camera api response")
+    except Exception as e:
+        app.logger.error(str(e))
+        
+        msg["message"] = str(e)
+        msg["status"] = 0
     
     return msg
 

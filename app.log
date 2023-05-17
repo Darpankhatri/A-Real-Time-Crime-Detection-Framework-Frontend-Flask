@@ -98,3 +98,47 @@
 2023-05-17 21:31:41,787 - ERROR - Expecting value: line 1 column 1 (char 0)
 2023-05-17 21:34:33,706 - INFO - file saved -> static/test/capr97.mp4
 2023-05-17 21:34:56,314 - DEBUG - {'CAP': '0.0%', 'CAPR': '100.0%', 'Normal': '0.0%', 'Theft': '0.0%'}
+2023-05-18 01:18:36,338 - INFO - live
+2023-05-18 01:18:36,391 - DEBUG - Camera api response
+2023-05-18 01:19:54,952 - INFO - live
+2023-05-18 01:19:55,041 - DEBUG - Camera api response
+2023-05-18 01:22:01,525 - INFO - live
+2023-05-18 01:22:01,555 - DEBUG - Camera api response
+2023-05-18 01:26:55,522 - INFO - live
+2023-05-18 01:26:57,590 - ERROR - HTTPConnectionPool(host='192.168.0.102', port=5000): Max retries exceeded with url: /liveCheck (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000025A882B3280>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-05-18 02:02:59,707 - INFO - file saved -> static/test/screencapture-127-0-0-1-5000-index-2023-05-17-15_11_28.png
+2023-05-18 02:02:59,826 - DEBUG - {'predicted_classes': 'carp', 'predicted_probabilities': {'CAP': '', 'CAPR': '', 'Normal': '', 'Theft': ''}}
+2023-05-18 02:03:58,815 - INFO - file saved -> static/test/screencapture-127-0-0-1-5000-index-2023-05-17-15_11_28.png
+2023-05-18 02:03:58,838 - DEBUG - {'predicted_classes': 'carp', 'predicted_probabilities': {'CAP': '', 'CAPR': '', 'Normal': '', 'Theft': ''}}
+2023-05-18 02:04:21,634 - INFO - file saved -> static/test/screencapture-127-0-0-1-5000-index-2023-05-17-15_11_28.png
+2023-05-18 02:04:21,660 - DEBUG - {'predicted_classes': 'carp', 'predicted_probabilities': {'CAP': '', 'CAPR': '', 'Normal': '', 'Theft': ''}}
+2023-05-18 02:04:54,088 - INFO - file saved -> static/test/screencapture-127-0-0-1-5000-index-2023-05-17-15_11_28.png
+2023-05-18 02:04:54,142 - DEBUG - {'predicted_classes': 'carp', 'predicted_probabilities': {'CAP': '', 'CAPR': '', 'Normal': '', 'Theft': ''}}
+2023-05-18 02:28:17,961 - INFO - file saved -> static/test/screencapture-127-0-0-1-5000-index-2023-05-17-15_11_28.png
+2023-05-18 02:28:18,027 - DEBUG - {'predicted_classes': 'carp', 'predicted_probabilities': {'CAP': '', 'CAPR': '', 'Normal': '', 'Theft': ''}}
+2023-05-18 02:31:07,196 - INFO - file saved -> static/test/screencapture-127-0-0-1-5000-index-2023-05-17-15_11_28.png
+2023-05-18 02:31:07,288 - DEBUG - {'predicted_classes': 'carp', 'predicted_probabilities': {'CAP': '', 'CAPR': '', 'Normal': '', 'Theft': ''}}
+2023-05-18 02:38:15,834 - INFO - file saved -> static/test/screencapture-127-0-0-1-5000-index-2023-05-17-15_11_28.png
+2023-05-18 02:38:15,874 - DEBUG - {'predicted_classes': 'carp', 'predicted_probabilities': {'CAP': '', 'CAPR': '', 'Normal': '', 'Theft': ''}}
+2023-05-18 02:42:58,922 - INFO - file saved -> static/test/screencapture-127-0-0-1-5000-index-2023-05-17-15_11_28.png
+2023-05-18 02:42:58,953 - DEBUG - {'predicted_classes': 'carp', 'predicted_probabilities': {'CAP': '', 'CAPR': '', 'Normal': '', 'Theft': ''}}
+2023-05-18 02:45:16,864 - INFO - file saved -> static/test/screencapture-127-0-0-1-5000-index-2023-05-17-15_11_28.png
+2023-05-18 02:45:16,919 - DEBUG - {'predicted_classes': 'carp', 'predicted_probabilities': {'CAP': '', 'CAPR': '', 'Normal': '', 'Theft': ''}}
+2023-05-18 02:47:09,455 - INFO - file saved -> static/test/screencapture-127-0-0-1-5000-index-2023-05-17-15_11_28.png
+2023-05-18 02:47:09,476 - DEBUG - {'predicted_classes': 'carp', 'predicted_probabilities': {'CAP': '', 'CAPR': '', 'Normal': '', 'Theft': ''}}
+2023-05-18 02:50:46,905 - INFO - file saved -> static/test/screencapture-127-0-0-1-5000-index-2023-05-17-15_11_28.png
+2023-05-18 02:50:46,943 - DEBUG - {'predicted_classes': 'carp', 'predicted_probabilities': {'CAP': '', 'CAPR': '', 'Normal': '', 'Theft': ''}}
+2023-05-18 02:51:13,322 - INFO - file saved -> static/test/screencapture-127-0-0-1-5000-index-2023-05-17-15_11_28.png
+2023-05-18 02:51:13,386 - DEBUG - {'predicted_classes': 'carp', 'predicted_probabilities': {'CAP': '', 'CAPR': '', 'Normal': '', 'Theft': ''}}
+2023-05-18 02:51:55,489 - INFO - file saved -> static/test/screencapture-127-0-0-1-5000-index-2023-05-17-15_11_28.png
+2023-05-18 02:51:55,521 - DEBUG - {'predicted_classes': 'carp', 'predicted_probabilities': {'CAP': '', 'CAPR': '', 'Normal': '', 'Theft': ''}}
+2023-05-18 02:53:09,179 - INFO - file saved -> static/test/screencapture-127-0-0-1-5000-index-2023-05-17-15_11_28.png
+2023-05-18 02:53:09,235 - DEBUG - {'predicted_classes': 'carp', 'predicted_probabilities': {'CAP': '', 'CAPR': '', 'Normal': '', 'Theft': ''}}
+2023-05-18 02:53:51,698 - INFO - file saved -> static/test/screencapture-127-0-0-1-5000-index-2023-05-17-15_11_28.png
+2023-05-18 02:53:51,732 - DEBUG - {'predicted_classes': 'carp', 'predicted_probabilities': {'CAP': '', 'CAPR': '', 'Normal': '', 'Theft': ''}}
+2023-05-18 02:54:29,731 - INFO - file saved -> static/test/screencapture-127-0-0-1-5000-index-2023-05-17-15_11_28.png
+2023-05-18 02:54:29,895 - DEBUG - {'predicted_classes': 'carp', 'predicted_probabilities': {'CAP': '', 'CAPR': '', 'Normal': '', 'Theft': ''}}
+2023-05-18 02:55:00,691 - INFO - file saved -> static/test/screencapture-127-0-0-1-5000-index-2023-05-17-15_11_28.png
+2023-05-18 02:55:00,722 - DEBUG - {'predicted_classes': 'carp', 'predicted_probabilities': {'CAP': '', 'CAPR': '', 'Normal': '', 'Theft': ''}}
+2023-05-18 02:55:19,214 - INFO - file saved -> static/test/screencapture-127-0-0-1-5000-index-2023-05-17-15_11_28.png
+2023-05-18 02:55:19,254 - DEBUG - {'predicted_classes': 'carp', 'predicted_probabilities': {'CAP': '', 'CAPR': '', 'Normal': '', 'Theft': ''}}

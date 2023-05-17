@@ -91,12 +91,13 @@ def upload():
             print(file.filename)
             file.save('static/test/' + file.filename)  # Save the file to a desired location
             app.logger.info('file saved -> static/test/' + file.filename)
-            file_img = "http://127.0.0.1:5000/static/test/"+file.filename
-            
+            file_img = file.filename
+            print(file_img)
             # Send a POST request to the Flask API with the image file as data
-            response = requests.post("http://10.42.0.109:5000/imgcheck", json={'file':file_img})
+            response = requests.post("http://192.168.18.17:5000/imgcheck", json={'file':file_img})
             prediction = response.json()
-            app.logger.debug(str(prediction))
+            app.logger.debug(prediction);
+            # app.logger.debug(str(prediction))
             return str(prediction),200
         else:
             return jsonify({'message': 'File Not Found'}),404

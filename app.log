@@ -65,3 +65,36 @@
 2023-05-11 00:13:05,491 - ERROR - flash() takes from 1 to 2 positional arguments but 3 were given
 2023-05-11 01:01:19,499 - DEBUG - http://127.0.0.1:5000/index
 2023-05-11 01:04:39,702 - DEBUG - http://127.0.0.1:5000/our-work
+2023-05-17 19:33:37,895 - INFO - file saved -> static/test/capr91.mp4
+2023-05-17 19:33:58,953 - ERROR - HTTPConnectionPool(host='10.42.0.109', port=5000): Max retries exceeded with url: /imgcheck (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000001A0B22EC710>, 'Connection to 10.42.0.109 timed out. (connect timeout=None)'))
+2023-05-17 19:36:33,442 - INFO - file saved -> static/test/capr102.mp4
+2023-05-17 19:36:49,426 - ERROR - Expecting value: line 1 column 1 (char 0)
+2023-05-17 19:42:30,724 - INFO - file saved -> static/test/capr91.mp4
+2023-05-17 19:45:11,357 - INFO - file saved -> static/test/capr91.mp4
+2023-05-17 19:46:47,346 - INFO - file saved -> static/test/capr102.mp4
+2023-05-17 19:54:28,416 - INFO - file saved -> static/test/capr91.mp4
+2023-05-17 19:55:05,917 - DEBUG - <Response [200]>
+2023-05-17 19:55:59,954 - INFO - file saved -> static/test/capr91.mp4
+2023-05-17 19:56:24,442 - DEBUG - {'predicted_classes': [0.49989888072013855, 0.5000826120376587, 1.8494050891604275e-05, 4.368520123421149e-08], 'predicted_probabilities': [0.49989888072013855, 0.5000826120376587, 1.8494050891604275e-05, 4.368520123421149e-08]}
+2023-05-17 20:33:25,561 - INFO - file saved -> static/test/capr102.mp4
+2023-05-17 20:33:40,093 - ERROR - Expecting value: line 1 column 1 (char 0)
+2023-05-17 20:34:21,639 - INFO - file saved -> static/test/capr102.mp4
+2023-05-17 20:34:34,597 - DEBUG - {'predicted_classes': {'CAP': '49.99%', 'CAPR': '50.01%', 'Normal': '0.0%', 'Theft': '0.0%'}, 'predicted_probabilities': {'CAP': '49.99%', 'CAPR': '50.01%', 'Normal': '0.0%', 'Theft': '0.0%'}}
+2023-05-17 20:37:48,976 - INFO - file saved -> static/test/capr91.mp4
+2023-05-17 20:38:03,616 - DEBUG - {'CAP': '49.99%', 'CAPR': '50.01%', 'Normal': '0.0%', 'Theft': '0.0%'}
+2023-05-17 20:38:41,456 - INFO - file saved -> static/test/normal72.mp4
+2023-05-17 20:38:56,531 - DEBUG - {'CAP': '49.99%', 'CAPR': '50.01%', 'Normal': '0.0%', 'Theft': '0.0%'}
+2023-05-17 21:00:38,131 - INFO - file saved -> static/test/normal69.mp4
+2023-05-17 21:00:52,825 - DEBUG - {'CAP': '0.02%', 'CAPR': '0.02%', 'Normal': '99.96%', 'Theft': '0.0%'}
+2023-05-17 21:01:06,453 - INFO - file saved -> static/test/normal72.mp4
+2023-05-17 21:01:24,808 - DEBUG - {'CAP': '49.97%', 'CAPR': '0.01%', 'Normal': '50.02%', 'Theft': '0.0%'}
+2023-05-17 21:02:09,635 - INFO - file saved -> static/test/capr100.mp4
+2023-05-17 21:02:26,176 - DEBUG - {'CAP': '49.99%', 'CAPR': '50.01%', 'Normal': '0.0%', 'Theft': '0.0%'}
+2023-05-17 21:29:25,068 - INFO - file saved -> static/test/capr86.mp4
+2023-05-17 21:29:25,084 - ERROR - Expecting value: line 1 column 1 (char 0)
+2023-05-17 21:30:41,629 - INFO - file saved -> static/test/capr92.mp4
+2023-05-17 21:30:41,664 - ERROR - Expecting value: line 1 column 1 (char 0)
+2023-05-17 21:31:41,755 - INFO - file saved -> static/test/capr94.mp4
+2023-05-17 21:31:41,787 - ERROR - Expecting value: line 1 column 1 (char 0)
+2023-05-17 21:34:33,706 - INFO - file saved -> static/test/capr97.mp4
+2023-05-17 21:34:56,314 - DEBUG - {'CAP': '0.0%', 'CAPR': '100.0%', 'Normal': '0.0%', 'Theft': '0.0%'}

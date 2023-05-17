@@ -1,15 +1,9 @@
-# import secrets
-from flask import jsonify
+import os
+import glob as glob
+import matplotlib.pyplot as plt
+import cv2
+import requests
+import random
+import numpy as np
 
-# # Generate a random 32-byte key
-# key = secrets.token_hex(32)
-
-# # Print the key
-# print(key)
-
-msg = {
-        "message": "Camera Closed",
-        "status": 1            
-    }
-
-print(msg)
+np.random.seed(42)

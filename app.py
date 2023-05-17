@@ -159,6 +159,10 @@ def ourwork():
 def pusher():
     return render_template('pusher.html')
 
+@app.route("/alert")
+def alert():
+    return render_template('emails/alert_email.html')
+
 @app.route('/done')
 def done():
     # cv2.destroyAllWindows()

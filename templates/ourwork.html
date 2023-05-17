@@ -25,13 +25,14 @@ Our Work
                                 <div id="collapseOne" class="accordion-collapse collapse show"
                                     aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        <strong>This is the first item's accordion body.</strong> It is shown by
-                                        default, until the collapse plugin adds the appropriate classes that we use to
-                                        style each element. These classes control the overall appearance, as well as the
-                                        showing and hiding via CSS transitions. You can modify any of this with custom
-                                        CSS or overriding our default variables. It's also worth noting that just about
-                                        any HTML can go within the <code>.accordion-body</code>, though the transition
-                                        does limit overflow.
+                                        Our crime classification model is trained on UCF-Crime which is a data set 
+                                        of long, untrimmed videos covering 13 real world anomalies (Abuse, Arson, Assault, Arrest, 
+                                        Road accidents, Burglary, Explosion, Fighting, Robbery, Shooting, Stealing, Shoplifting and 
+                                        Vandalism). First of all, we combined a few of these classes into one crime class. Such as 
+                                        CAP (Fighting, Assault), Theft (Robbery), CAPR (Vandalism, Burglary, Shooting) and one Normal 
+                                        Class. Once the data was gathered, we extensively cleaned the UCF Crime data set. As there were 
+                                        repetition, advertisements, misclassification of crime and blurry videos. After cleaning, data 
+                                        set was augmented by flipping the image horizontally(mirrored), to increase the size of data set.
                                     </div>
                                 </div>
                             </div>
@@ -45,13 +46,23 @@ Our Work
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        <strong>This is the second item's accordion body.</strong> It is hidden by
+                                        <!-- <strong>This is the second item's accordion body.</strong> It is hidden by
                                         default, until the collapse plugin adds the appropriate classes that we use to
                                         style each element. These classes control the overall appearance, as well as the
                                         showing and hiding via CSS transitions. You can modify any of this with custom
                                         CSS or overriding our default variables. It's also worth noting that just about
                                         any HTML can go within the <code>.accordion-body</code>, though the transition
-                                        does limit overflow.
+                                        does limit overflow. -->
+                                        To detect criminal objects in our input video, we trained a Yolov5s object detection 
+                                        model to detect one of two criminal objects: Guns, Knives. This model is able to detect 
+                                        any one of these two criminal objects in a stored video as well as in real-time.<br>
+                                        Yolov5s is an object detection algorithm that divides images into a grid system. Each cell 
+                                        in the grid is in charge of detecting objects within itself. We were able to achieve a 
+                                        high mAP of 84%, through training our model on a combined data set of guns and knives data set. 
+                                        We used a combination of two kinds of data sets: “Soha’s Weapon detection” dataset which 
+                                        included CCTV images of people holding said criminal objects. Second data set which we 
+                                        combined was OD-Weapon Detection, which included close-up pictures of these criminal objects. 
+                                        Both of these data sets were augmented by flipping, to increase the size of data set.
                                     </div>
                                 </div>
                             </div>

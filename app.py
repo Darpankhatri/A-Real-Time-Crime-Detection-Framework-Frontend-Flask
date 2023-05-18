@@ -82,22 +82,20 @@ def upload():
             file_img = file.filename
             print(file_img)
             # Send a POST request to the Flask API with the image file as data
-            response = requests.post("http://192.168.0.102:5000/imgcheck", json={'file':file_img})
+            response = requests.post("http://192.168.52.209:5000/imgcheck", json={'file':file_img})
             prediction = response.json()
             app.logger.debug(prediction)
-            predictClass = prediction["predicted_classes"]
-            predictProb = prediction["predicted_probabilities"]
             
             # email
             email = request.form['email']
             if(email):
                 print('yes')
                 msg = Message('DOV Alert', sender ='info@dov.com', recipients = [email])
-                msg.html = render_template('emails/alert_email.html', crimeClass=prediction["predicted_classes"])
+                msg.html = render_template('emails/alert_email.html', crimeClass=prediction)
                 thr = Thread(target=send_async_email, args=[app, msg])
                 thr.start()
         
-            return jsonify({"class":predictClass,"prob":str(predictProb)}),200
+            return str(prediction),200
         else:
             return jsonify({'message': 'File Not Found'}),404
         

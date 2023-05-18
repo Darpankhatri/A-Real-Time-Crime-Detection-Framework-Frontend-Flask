@@ -142,3 +142,13 @@
 2023-05-18 02:55:00,722 - DEBUG - {'predicted_classes': 'carp', 'predicted_probabilities': {'CAP': '', 'CAPR': '', 'Normal': '', 'Theft': ''}}
 2023-05-18 02:55:19,214 - INFO - file saved -> static/test/screencapture-127-0-0-1-5000-index-2023-05-17-15_11_28.png
 2023-05-18 02:55:19,254 - DEBUG - {'predicted_classes': 'carp', 'predicted_probabilities': {'CAP': '', 'CAPR': '', 'Normal': '', 'Theft': ''}}
+2023-05-18 08:47:49,529 - INFO - file saved -> static/test/cap64.mp4
+2023-05-18 08:48:16,824 - DEBUG - {'CAP': '50.0%', 'CAPR': '50.0%', 'Normal': '0.0%', 'Theft': '0.0%'}
+2023-05-18 08:48:16,826 - ERROR - 'predicted_classes'
+2023-05-18 08:48:29,813 - INFO - file saved -> static/test/cap68.mp4
+2023-05-18 08:48:50,368 - DEBUG - {'CAP': '100.0%', 'CAPR': '0.0%', 'Normal': '0.0%', 'Theft': '0.0%'}
+2023-05-18 08:48:50,370 - ERROR - 'predicted_classes'
+2023-05-18 08:51:14,149 - INFO - file saved -> static/test/cap86.mp4
+2023-05-18 08:51:27,968 - DEBUG - {'CAP': '0.01%', 'CAPR': '99.98%', 'Normal': '0.01%', 'Theft': '0.0%'}
+2023-05-18 08:52:31,248 - INFO - live
+2023-05-18 08:52:52,300 - ERROR - HTTPConnectionPool(host='192.168.0.102', port=5000): Max retries exceeded with url: /liveCheck (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000001F530DDCC50>, 'Connection to 192.168.0.102 timed out. (connect timeout=None)'))

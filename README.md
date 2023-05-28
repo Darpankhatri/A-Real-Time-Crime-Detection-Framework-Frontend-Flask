@@ -1,3 +1,5 @@
+![logo4](https://github.com/Darpankhatri/A-Real-Time-Crime-Detection-Framework-Frontend-Flask/assets/103587452/6d0b964f-6a86-4db1-88a7-f866fac3a2a6)
+
 for quee
 pip install celery[rabbitmq]
 
@@ -5,4 +7,5 @@ pip install celery[rabbitmq]
 for email
 pip install Flask-Mail
 
-![image](https://github.com/Darpankhatri/fyp-flask/assets/103587452/16cce267-fe7c-4f8f-b84c-d2de56f7ad5e)
+
+
